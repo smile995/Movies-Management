@@ -17,9 +17,7 @@ const practiceTask=async(a:string)=>{
 
 // get a single movie
 const getSingleMovie=async(id:string)=>{
-const singleMovie= await Movies.findById({_id:id});
-console.log("service",singleMovie);
-
+const singleMovie= await Movies.findById({_id:id})
 return singleMovie;
 }
 

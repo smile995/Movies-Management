@@ -24,8 +24,6 @@ const getAllMovies = async (req: Request, res: Response) => {
 // get a movie by id that come from  params
 const getOneMovie = async (req: Request, res: Response) => {
     const { movieId } = req.params;
-    console.log(movieId);
-    
     const oneMovie = await MovieServices.getSingleMovie(movieId);
     res.json({
         success: true,
