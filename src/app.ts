@@ -7,9 +7,7 @@ app.use(express.json())
 // I will maintain here all the route but exicution will be in different file,
 
 app.use('/api/movies',MoviesRouter);
-app.use('/api/allmovies',MoviesRouter);
-// app.use('/practice',MoviesRouter)
-app.use("/api/movie",MoviesRouter)
+
 
 
 // initial route controller

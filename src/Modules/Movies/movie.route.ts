@@ -3,13 +3,14 @@ import express from "express"
 import { moviesController } from "./movie.controller";
 const router= express.Router();
 // posting a movie data from this route
-router.post("/",moviesController.createMovieController)
+router.post("/create-movie",moviesController.createMovie)
 // getting all the movies
 router.get("/",moviesController.getAllMovies)
 // practicing route
-router.get("/work",moviesController.taskPractice)
+
 // find a movie
 router.get("/:movieId",moviesController.getOneMovie)
+router.patch("/:movieId",moviesController.UpdateMovies)
 
 export const MoviesRouter= router;
 

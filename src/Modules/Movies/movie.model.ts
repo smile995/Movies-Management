@@ -1,19 +1,12 @@
 import { Schema, model } from "mongoose";
-import { Review, TMovie, } from "./movie.interface";
+import { TMovie } from "./movie.interface";
 
-// schema that define the data type of interface
-const reviewSchema = new Schema<Review>({
-    email: { type: String,unique:true, required: true },
-    rating: { type: Number, required: true },
-    comment: { type: String, required: true },
-
-});
 const movieSchema = new Schema<TMovie>({
     title: { type: String, required: [true, "Title is required"] },
     description: { type: String, required: [true, "Description is required"] },
     releaseDate: { type: Date, required: [true, "Date is required"] },
     genre: { type: String, required: [true, "Genre is required"] },
-    reviews: { type: [reviewSchema] },
+    slug:{type:String},
     isDeleted: { type: Boolean, default: false },
     viewCount: { type: Number, default: 0 },
     totalRating: { type: Number, default: 0 }
