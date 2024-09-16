@@ -24,8 +24,8 @@ const getAllMovies = async (req: Request, res: Response) => {
 }
 const UpdateMovies = async (req: Request, res: Response) => {
     const UpdateData= req.body
-    const {movieId}=req.params
-    const result = await MovieServices.updateMovie(movieId,UpdateData)
+    const {slug}=req.params
+    const result = await MovieServices.updateMovie(slug,UpdateData)
     res.json({
         success: true,
         message: "Successfully Update the data into database",
@@ -34,8 +34,8 @@ const UpdateMovies = async (req: Request, res: Response) => {
 }
 // get a movie by id that come from  params
 const getOneMovie = async (req: Request, res: Response) => {
-    const { movieId } = req.params;
-    const oneMovie = await MovieServices.getSingleMovie(movieId);
+    const { slug } = req.params;
+    const oneMovie = await MovieServices.getSingleMovie(slug);
     res.json({
         success: true,
         data: oneMovie

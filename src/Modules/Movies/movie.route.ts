@@ -9,8 +9,8 @@ router.get("/",moviesController.getAllMovies)
 // practicing route
 
 // find a movie
-router.get("/:movieId",moviesController.getOneMovie)
-router.patch("/:movieId",moviesController.UpdateMovies)
+router.get("/:slug",moviesController.getOneMovie)
+router.patch("/:slug",moviesController.UpdateMovies)
 
 export const MoviesRouter= router;
 
